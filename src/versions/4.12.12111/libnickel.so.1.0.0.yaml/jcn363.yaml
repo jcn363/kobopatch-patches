@@ -6,7 +6,7 @@ Dictionary, remove long winded closest match notification:
       cf. https://www.mobileread.com/forums/showpost.php?p=3043631&postcount=111
   - FindReplaceString: 
         Find:    "Your search for &ldquo;%1&rdquo; did not match any words in the dictionary. The closest match was &ldquo;%2&rdquo;."
-        Replace: "No match, The closest match was &ldquo;%2&rdquo;.\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+        Replace: "No match, the closest match was &ldquo;%2&rdquo;.\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
         MustMatchLength: yes
 
 Wikipedia Search language:
@@ -21,3 +21,32 @@ Wikipedia Search language:
   - FindReplaceString: 
         Find:    "\0https://%1.wikipedia.org/wiki/Special:Search\0"
         Replace: "\0https://es.wikipedia.org/wiki/Special:Search\0"
+
+unclassified (PROGRESIVE):
+  - Enabled: no
+  - Description: |
+      source: tshering/KBPatcher17_4.4.9995/4_plus_source/libnickel.so.1.0.0
+  - FindReplaceString: {Find: "font-size: 20px", Replace: "font-size: 24px", MustMatchLength: yes}
+
+Font-family and font-size bulk change (part 2 of 2):
+  - Enabled: no
+  - Description: |
+      Based on tshering's BAD EYES
+      source: tshering/KBPatcher17_4.4.9995/4_plus_source/nickel
+      BE CAREFUL NOT TO CHANGE THE LENGTH OF THE REPLACEMENT STRING!
+      If a replacement string is too long or short you will get an error when making the patch.
+  - FindReplaceString:
+      Find:    " Avenir;\n}\n\n"
+# When editing the replacement values below,
+# BE CAREFUL NOT TO CHANGE THE LENGTH OF THE REPLACEMENT STRING!
+      Replace: "\"Gill Sans\"}"
+      MustMatchLength: yes
+  - FindReplaceString:
+      Find:    "Sans-SerifJP"
+# When editing the replacement values below,
+# BE CAREFUL NOT TO CHANGE THE LENGTH OF THE REPLACEMENT STRING!
+      Replace: "\"Gill Sans\" "
+      MustMatchLength: yes
+# When editing the replacement values below,
+# BE CAREFUL NOT TO CHANGE THE LENGTH OF THE REPLACEMENT STRING!
+  - FindReplaceString: {Find: "font-size: 20px", Replace: "font-size: 24px", MustMatchLength: yes}
